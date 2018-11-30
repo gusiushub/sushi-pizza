@@ -97,12 +97,12 @@ AppAsset::register($this);
                 <div class="page-header__cart-top">
                     <a href="/product/pay" class="page-header__cart-link button">Корзина</a>
                     <div class="page-header__cart-top-button-wrapper">
-                        <a href="#" class="page-header__cart-button" title="Открыть корзину">
+                        <a href="/product/pay" class="page-header__cart-button" title="Открыть корзину">
                             <i class="fas fa-shopping-bag"></i>
                             <span class="goods-item">1</span>
                         </a>
                         <p class="page-header__cart-top-total-price">
-                            <span class="goods-total-price-value">0</span>
+                            <span class="goods-total-price-value">1</span>
                             <i class="fas fa-ruble-sign"></i>
                         </p>
                         <button class="page-header__cart-top-item button">
@@ -170,7 +170,7 @@ AppAsset::register($this);
                                 </div>
                                 </form>
                                 <div class="page-header__cart-item-price">
-                                    <span class="goods-price-value" data-price="<?= Yii::$app->cart->getTotalCost()?>"><?= Yii::$app->cart->getTotalCost()?></span>
+                                    <span class="goods-price-value" data-price="<?= $item->getCost()?>"><?= $item->getCost()?></span>
                                     <span class="page-header__cart-sign">руб.</span>
                                     <i class="fas fa-ruble-sign"></i>
                                 </div>

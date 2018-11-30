@@ -12,48 +12,14 @@
             <button class="vertical-menu__button-menu button" type="button" title="Открыть меню">
                 <i class="fas fa-arrow-right"></i>
             </button>
-            <ul class="vertical-menu__list">
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Суши</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Роллы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Запечённые роллы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Наборы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Пицца</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="noodles.html" class="vertical-menu__link">Лапша WOK</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Супы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Бизнес ланчи</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Салаты и закуски</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Десерты</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Напитки</a>
-                </li>
-            </ul>
+            <?= $this->render('_menu') ?>
         </aside>
 
         <!--  Содержимое которое должно быть в main, вставлять в page-main__right -->
         <div class="page-main__right ordering">
             <ul class="breadcrumbs breadcrumbs--ordering">
                 <li class="breadcrumbs__item">
-                    <a href="index.html" class="breadcrumbs__link">Главная</a>
+                    <a href="/" class="breadcrumbs__link">Главная</a>
                 </li>
                 <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link breadcrumbs__link--active">Оформление заказа</a>
@@ -61,6 +27,7 @@
             </ul>
             <h1 class="ordering__h1">Оформление заказа</h1>
             <form class="ordering__form" action="/" method="get">
+                <?php  if(!empty($_SESSION['cart'])){ ?>
                 <table class="ordering__table">
                     <tr class="ordering__table-tr">
                         <th class="ordering__table-th">Товар</th>
@@ -69,64 +36,102 @@
                         <th class="ordering__table-th">Итого, руб.</th>
                         <th class="ordering__table-th">Удалить</th>
                     </tr>
+                    <?php foreach($_SESSION['cart'] as $item){?>
                     <tr class="ordering__table-tr goods-container">
                         <td class="ordering__table-td">
-                            <a href="#" class="ordering__table-link">Запечённые</a>
+                            <a href="#" class="ordering__table-link"><?= $item->getProduct()->title ?></a>
                         </td>
-                        <td class="ordering__table-td ordering__table-td--price">65</td>
+                        <td class="ordering__table-td ordering__table-td--price"><?= $item->getPrice()?></td>
                         <td class="ordering__table-td ordering__table-td--amount">
-                            <button class="ordering__table-amount ordering__table--subtraction button goods-subtraction"
+                            <button onclick='$.ajax({
+                                    url: "/product/remove?item=<?= $_GET['item'] ?>&id=<?= $item->getId() ?>",
+                                    data: $("#min").serialize(),
+                                    success:  function(response){
+                                    console.log(response);
+                                    // put on console what server sent back...
+                                    },
+                                    error: function(response) {
+                                    //обработка ошибок при отправке
+                                    console.log(response);
+                                    }
+                                    });' class="ordering__table-amount ordering__table--subtraction button goods-subtraction"
                                     type="button" title="Уменьшить количество">
                                 <span>-</span>
                             </button>
                             <label class="page-header__cart-label">
-                                <input class="ordering__table-input goods-input" name="Калифорния креветка" type="number" value="1"
+                                <input class="ordering__table-input goods-input" name="Калифорния креветка" type="number" value="<?= $item->getQuantity() ?>"
                                        min="1" max="100" title="Количество">
                             </label>
-                            <button class="ordering__table-amount ordering__table--addition button goods-addition"
+                            <button onclick='$.ajax({
+                                    url: "/product/add?id=<?= $item->getId() ?>",
+                                    data: $("#max").serialize(),
+                                    success:  function(response){
+                                    console.log(response);
+                                    // put on console what server sent back...
+                                    },
+                                    error: function(response) {
+                                    //обработка ошибок при отправке
+                                    console.log(response);
+                                    }
+                                    });' class="ordering__table-amount ordering__table--addition button goods-addition"
                                     type="button" title="Увеличить количество">
                                 <span>+</span>
                             </button>
                         </td>
-                        <td class="ordering__table-td ordering__table-td--price goods-price-value" data-price="65">65</td>
+                        <td class="ordering__table-td ordering__table-td--price goods-price-value" data-price="<?= $item->getCost()?>"><?= $item->getCost()?></td>
                         <td class="ordering__table-td">
-                            <button class="ordering__table-button button goods-delete" type="button" title="Удалить">
+                            <button onclick='$.ajax({
+                                    url: "/product/remove?id=<?= $item->getId() ?>",
+                                    data: $("#max").serialize(),
+                                    success:  function(response){
+                                    console.log(response);
+                                    // put on console what server sent back...
+                                    },
+                                    error: function(response) {
+                                    //обработка ошибок при отправке
+                                    console.log(response);
+                                    }
+                                    });' class="ordering__table-button button goods-delete" type="button" title="Удалить">
                                 <span>x</span>
                             </button>
                         </td>
                     </tr>
-                    <tr class="ordering__table-tr goods-container">
-                        <td class="ordering__table-td">
-                            <a href="#" class="ordering__table-link">Калифорния креветка</a>
-                        </td>
-                        <td class="ordering__table-td ordering__table-td--price" data-price="250">250</td>
-                        <td class="ordering__table-td ordering__table-td--amount">
-                            <button class="ordering__table-amount ordering__table-amount--subtraction button goods-subtraction"
-                                    type="button" title="Уменьшить количество">
-                                <span>-</span>
-                            </button>
-                            <label class="page-header__cart-label">
-                                <input class="ordering__table-input goods-input" name="Калифорния креветка" type="number" value="1"
-                                       min="1" max="100" title="Количество">
-                            </label>
-                            <button class="ordering__table-amount ordering__table-amount--addition button goods-addition"
-                                    type="button" title="Увеличить количество">
-                                <span>+</span>
-                            </button>
-                        </td>
-                        <td class="ordering__table-td ordering__table-td--price goods-price-value" data-price="250">250</td>
-                        <td class="ordering__table-td">
-                            <button class="ordering__table-button button goods-delete" type="button" title="Удалить">
-                                <span>x</span>
-                            </button>
-                        </td>
-                    </tr>
+                    <?php } ?>
+<!--                    <tr class="ordering__table-tr goods-container">-->
+<!--                        <td class="ordering__table-td">-->
+<!--                            <a href="#" class="ordering__table-link">Калифорния креветка</a>-->
+<!--                        </td>-->
+<!--                        <td class="ordering__table-td ordering__table-td--price" data-price="250">250</td>-->
+<!--                        <td class="ordering__table-td ordering__table-td--amount">-->
+<!--                            <button class="ordering__table-amount ordering__table-amount--subtraction button goods-subtraction"-->
+<!--                                    type="button" title="Уменьшить количество">-->
+<!--                                <span>-</span>-->
+<!--                            </button>-->
+<!--                            <label class="page-header__cart-label">-->
+<!--                                <input class="ordering__table-input goods-input" name="Калифорния креветка" type="number" value="1"-->
+<!--                                       min="1" max="100" title="Количество">-->
+<!--                            </label>-->
+<!--                            <button class="ordering__table-amount ordering__table-amount--addition button goods-addition"-->
+<!--                                    type="button" title="Увеличить количество">-->
+<!--                                <span>+</span>-->
+<!--                            </button>-->
+<!--                        </td>-->
+<!--                        <td class="ordering__table-td ordering__table-td--price goods-price-value" data-price="250">250</td>-->
+<!--                        <td class="ordering__table-td">-->
+<!--                            <button class="ordering__table-button button goods-delete" type="button" title="Удалить">-->
+<!--                                <span>x</span>-->
+<!--                            </button>-->
+<!--                        </td>-->
+<!--                    </tr>-->
                 </table>
                 <div class="ordering__cart-total-price goods-total-price">
                     <span class="ordering__cart-total-price-text">Итого по заказу: </span>
                     <span class="goods-total-price-value">869</span>
                     <button class="ordering__cart-delete-all button goods-delete-all" type="button">Очистить корзину</button>
                 </div>
+                <?php } else{?>
+                    <h3>Корзина пуста</h3>
+                <?php }?>
                 <div class="ordering__form-info">
                     <div class="ordering__form-info-left">
                         <h3 class="ordering__form-info-title">Клиетн:</h3>
@@ -199,7 +204,9 @@
                     </div>
                     <button class="ordering__form-submit-button button" type="submit">Оформить заказ</button>
                 </div>
+
             </form>
         </div>
     </div>
 </main>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

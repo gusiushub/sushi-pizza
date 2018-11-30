@@ -37,12 +37,33 @@ class ProductController extends \yii\web\Controller
      */
     public function actionIndex()
     {
+        $eat = [
+            "Морепродукты"=>100,
+            'Говядина'=>90,
+            'Свинина'=>70,
+            'Курица'=>60,
+            'Лосось'=>110,
+            'Яйцо'=>20,
+            'Шампиньоны'=>40,
+            'Бекон'=>60,
+            'Сыр'=>40,
+        ];
 
         if (!isset($_GET['item'])){
             return $this->redirect(['/site/menu']);
         }
 
         $items = Item::find()->where('product_title=:item',[':item' => $_GET['item']])->all();
+
+        if (isset($_POST['wok'])){
+            if (!empty($eat[$_POST["add-filling"]])) {
+
+            }
+            if (!empty($eat[$_POST["topping"]])) {
+
+            }
+
+        }
 
         if ($_GET['item']=='wok'){
             return $this->render('wok', [

@@ -78,11 +78,5 @@ $breadcrumbs = [
         </div>
     </div>
 </main>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
-        // $('#button').submit(function(e){
-        //     e.preventDefault();
-        //
-        // });
-
-</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 

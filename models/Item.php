@@ -18,8 +18,6 @@ use yii\web\UploadedFile;
  */
 class Item extends \yii\db\ActiveRecord
 {
-//    public $img;
-
 
     /**
      * {@inheritdoc}

@@ -53,24 +53,24 @@
         <div class="page-main__right">
             <ul class="breadcrumbs">
                 <li class="breadcrumbs__item">
-                    <a href="index.html" class="breadcrumbs__link">Главная</a>
+                    <a href="/" class="breadcrumbs__link">Главная</a>
                 </li>
                 <li class="breadcrumbs__item">
-                    <a href="menu.html" class="breadcrumbs__link">Меню</a>
+                    <a href="/site/menu" class="breadcrumbs__link">Меню</a>
                 </li>
                 <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link breadcrumbs__link--active">Лапша Wok</a>
                 </li>
             </ul>
             <h1 class="noodles__h1">Лапша WOK</h1>
-            <form class="noodles__form" action="/" method="get">
+            <form class="noodles__form" action="/product?item=wok" method="post">
                 <p class="noodles__desc">СОБЕРИ СВОЙ WOK</p>
                 <div class="noodles__form-fieldset-wrapper noodles__form-fieldset-wrapper--main">
                     <fieldset class="noodles__form-fieldset">
                         <legend class="noodles__form-legend">
                             <span class="noodles__form-legend-title">Начинка</span>
                             <span class="noodles__form-legend-img-container">
-                <img class="noodles__form-legend-img" src="img/content/noodles/lapshp_pshenichnaya.jpg" width="1920"
+                <img class="noodles__form-legend-img" src="../../web/img/content/noodles/lapshp_pshenichnaya.jpg" width="1920"
                      height="1380"
                      alt="Блюдо">
               </span>
@@ -80,21 +80,21 @@
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Харусаме<br> (рисовая)</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="1" checked>
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="Харусаме" checked>
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Удон<br> (пшеничная)</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="2">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="Удон(пшеничная)">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Харусаме<br> (рисовая)</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="3">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="Харусаме(рисовая)">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -104,7 +104,7 @@
                         <legend class="noodles__form-legend">
                             <span class="noodles__form-legend-title">Гарнир</span>
                             <span class="noodles__form-legend-img-container">
-                <img class="noodles__form-legend-img" src="img/content/noodles/garnish.png" width="260"
+                <img class="noodles__form-legend-img" src="../../web/img/content/noodles/garnish.png" width="260"
                      height="320" alt="Гарнир">
               </span>
                             <span class="noodles__form-legend-text">+</span>
@@ -113,7 +113,7 @@
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Рис<br> (белый)</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="1.1">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="filling" value="Рис(белый)">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -123,7 +123,7 @@
                         <legend class="noodles__form-legend">
                             <span class="noodles__form-legend-title">Овощи</span>
                             <span class="noodles__form-legend-img-container">
-                <img class="noodles__form-legend-img" src="img/content/noodles/ovishi.png" width="400"
+                <img class="noodles__form-legend-img" src="../../web/img/content/noodles/ovishi.png" width="400"
                      height="345" alt="Овощи">
               </span>
                             <span class="noodles__form-legend-text">+</span>
@@ -142,7 +142,7 @@
                         <legend class="noodles__form-legend">
                             <span class="noodles__form-legend-title">Соус</span>
                             <span class="noodles__form-legend-img-container">
-                <img class="noodles__form-legend-img" src="img/content/noodles/soeviy-sous.jpg" width="414"
+                <img class="noodles__form-legend-img" src="../../web/img/content/noodles/soeviy-sous.jpg" width="414"
                      height="290" alt="Соус">
               </span>
                             <span class="noodles__form-legend-text">=</span>
@@ -151,28 +151,28 @@
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Фирменный</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="1" checked>
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="Фирменный" checked>
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Сливочный</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="2">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="Сливочный">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Терияки</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="3">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="Терияки">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
                             <li class="noodles__form-item">
                                 <label class="noodles__form-label label-radio">
                                     <span class="label-radio__text">Острый</span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="4">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="sauce" value="Острый">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -190,7 +190,7 @@
                         <legend class="noodles__form-legend">
                             <span class="noodles__form-legend-title">Начинка</span>
                             <span class="noodles__form-legend-img-container">
-                <img class="noodles__form-legend-img" src="img/content/noodles/big__nazvaniia.png" width="256"
+                <img class="noodles__form-legend-img" src="../../web/img/content/noodles/big__nazvaniia.png" width="256"
                      height="194" alt="Дополнительная начинка">
               </span>
                         </legend>
@@ -202,7 +202,7 @@
                     <span class="label-radio__price-value" data-price="100">100</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="1" checked>
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="Морепродукты" checked>
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -213,7 +213,7 @@
                     <span class="label-radio__price-value" data-price="90">90</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="2">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="Говядина">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -224,7 +224,7 @@
                     <span class="label-radio__price-value" data-price="70">70</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="3">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="Свинина">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -235,7 +235,7 @@
                     <span class="label-radio__price-value" data-price="60">60</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="4">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="Курица">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -246,7 +246,7 @@
                     <span class="label-radio__price-value" data-price="110">110</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="4">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="add-filling" value="Лосось">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -256,7 +256,7 @@
                         <legend class="noodles__form-legend">
                             <span class="noodles__form-legend-title">Топинги</span>
                             <span class="noodles__form-legend-img-container">
-                <img class="noodles__form-legend-img" src="img/content/noodles/580b57fbd9996e24bc43c08d-min.png"
+                <img class="noodles__form-legend-img" src="../../web/img/content/noodles/580b57fbd9996e24bc43c08d-min.png"
                      width="370" height="370" alt="Топинги">
               </span>
                         </legend>
@@ -268,7 +268,7 @@
                     <span class="label-radio__price-value" data-price="20">20</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="1" checked>
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="Яйцо" checked>
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -279,7 +279,7 @@
                     <span class="label-radio__price-value" data-price="40">40</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="2">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="Шампиньоны">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -290,7 +290,7 @@
                     <span class="label-radio__price-value" data-price="60">60</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="3">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="Бекон">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -301,7 +301,7 @@
                     <span class="label-radio__price-value" data-price="40">40</span>
                     <i class="fas fa-ruble-sign"></i>
                   </span>
-                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="4">
+                                    <input class="noodles__form-input visually-hidden" type="radio" name="topping" value="Сыр">
                                     <span class="label-radio__icon"></span>
                                 </label>
                             </li>
@@ -314,7 +314,7 @@
                         <strong class="noodles__cart-total-value">289</strong>
                         <strong class="noodles__cart-total-sign"> руб.</strong>
                     </div>
-                    <button class="noodles__cart-total-button button" type="submit">В корзину</button>
+                    <button class="noodles__cart-total-button button" name="wok" type="submit">В корзину</button>
                 </div>
             </form>
         </div>
