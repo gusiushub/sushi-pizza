@@ -1,0 +1,29 @@
+.page-main {
+  padding: 0.1px 0;
+  background: url("../img/content/main-bg.jpg") no-repeat;
+  background-size: cover;
+
+  &.footer-bottom__content {
+    background: #ffffff url("../img/content/main-bg-transparent.png") no-repeat;
+
+    .page-main__wrapper {
+      background: transparent;
+    }
+  }
+}
+
+.page-main__wrapper {
+  display: flex;
+  padding-top: 25px;
+  background: #ffffff url("../img/content/main-bg-transparent.png") no-repeat;
+  background-size: cover;
+}
+
+.page-main__left {
+  flex-shrink: 0;
+}
+
+.page-main__right {
+  flex-grow: 1;
+  width: 100%;
+}
