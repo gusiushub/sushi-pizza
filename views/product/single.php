@@ -27,11 +27,9 @@ $this->title = $item['title'];
                     </div>
                     <div class="card-main__right">
                         <span class="card-price"><?= $item['price'] ?> ₽</span>
-<!--                        <a href="/product/add?id=--><?php //echo (int)$_GET['id']?><!--$item=--><?php //echo $_GET['item']?><!--"><button class="card-btn">В корзину</button></a>-->
                         <a href="<?=Url::to(['/product/add', 'id' => $_GET['id']])?>"><button class="card-btn">В корзину</button></a>
                     </div>
                 </div>
-<!--                </form>-->
             </section>
         </div>
     </div>

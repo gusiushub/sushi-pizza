@@ -175,7 +175,7 @@ $this->title = 'Takara';
                 </li>
                 <li class="catalog-list__item rolls-item">
                     <a href="/product?item=rolls" class="catalog-list__link">
-                        <img src="" class="catalog-list__item-img" alt="catalog-item">
+                        <img src="../../web/img/catalog/rolls-bg.png" class="catalog-list__item-img" alt="catalog-item">
                         <p class="catalog-list__item-title">Роллы</p>
                     </a>
                 </li>
@@ -199,19 +199,19 @@ $this->title = 'Takara';
                 </li>
                 <li class="catalog-list__item wok-item">
                     <a href="/product?item=wok" class="catalog-list__link">
-                        <img src="img/catalog/wok.png" class="catalog-list__item-img" alt="catalog-item">
+                        <img src="../../web/img/catalog/wok.png" class="catalog-list__item-img" alt="catalog-item">
                         <p class="catalog-list__item-title">Лапша wok</p>
                     </a>
                 </li>
                 <li class="catalog-list__item soup-item">
                     <a href="/product?item=soup" class="catalog-list__link">
-                        <img src="img/catalog/miso.png" class="catalog-list__item-img" alt="catalog-item">
+                        <img src="../../web/img/catalog/miso.png" class="catalog-list__item-img" alt="catalog-item">
                         <p class="catalog-list__item-title">Супы</p>
                     </a>
                 </li>
                 <li class="catalog-list__item lanch-item">
                     <a href="/product?item=lunch" class="catalog-list__link">
-                        <img src="img/catalog/lanch.png" class="catalog-list__item-img" alt="catalog-item">
+                        <img src="../../web/img/catalog/lanch.png" class="catalog-list__item-img" alt="catalog-item">
                         <p class="catalog-list__item-title">Бизнес ланчи</p>
                     </a>
                 </li>
@@ -223,13 +223,13 @@ $this->title = 'Takara';
                 </li>
                 <li class="catalog-list__item desert-item">
                     <a href="/product?item=dessert" class="catalog-list__link">
-                        <img src="" class="catalog-list__item-img" alt="catalog-item">
+                        <img src="../../web/img/catalog/desert-bg.png" class="catalog-list__item-img" alt="catalog-item">
                         <p class="catalog-list__item-title">Десерты</p>
                     </a>
                 </li>
                 <li class="catalog-list__item drink-item">
                     <a href="/product?item=drinks" class="catalog-list__link">
-                        <img src="img/catalog/cola.png" class="catalog-list__item-img" alt="catalog-item">
+                        <img src="../../web/img/catalog/cola.png" class="catalog-list__item-img" alt="catalog-item">
                         <p class="catalog-list__item-title">Напитки</p>
                     </a>
                 </li>
