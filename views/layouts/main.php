@@ -117,9 +117,9 @@ AppAsset::register($this);
                     <ol class="page-header__cart-list">
                         <?php
 
-                        $cartItems = $_SESSION['cart'];
+//                        $cartItems = $_SESSION['cart'];
 
-                        if(!empty($cartItems)){ ?>
+                        if(!empty($_SESSION['cart'])){ ?>
                             <?php foreach($_SESSION['cart'] as $item){?>
                         <li class="page-header__cart-item goods-container">
                             <div class="page-header__cart-title-wrapper">

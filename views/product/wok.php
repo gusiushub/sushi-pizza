@@ -12,41 +12,7 @@
             <button class="vertical-menu__button-menu button" type="button" title="Открыть меню">
                 <i class="fas fa-arrow-right"></i>
             </button>
-            <ul class="vertical-menu__list">
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Суши</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="rolls.html" class="vertical-menu__link">Роллы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Запечённые роллы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Наборы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Пицца</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a class="vertical-menu__link vertical-menu__link--active">Лапша WOK</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Супы</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Бизнес ланчи</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Салаты и закуски</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Десерты</a>
-                </li>
-                <li class="vertical-menu__item">
-                    <a href="#" class="vertical-menu__link">Напитки</a>
-                </li>
-            </ul>
+            <?php  echo $this->render('_menu'); ?>
         </aside>
 
         <!--  Содержимое которое должно быть в main, вставлять в page-main__right -->

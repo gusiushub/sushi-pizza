@@ -120,7 +120,8 @@ class ProductController extends \yii\web\Controller
             Yii::$app->errorHandler->logException($e);
             Yii::$app->session->setFlash('error', $e->getMessage());
         }
-//        return $this->redirect(['index']);
+            return $this->redirect(['index']);
+
     }
 
     /**
