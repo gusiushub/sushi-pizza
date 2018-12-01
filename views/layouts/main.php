@@ -345,3 +345,4 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

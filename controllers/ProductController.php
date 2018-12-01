@@ -120,6 +120,26 @@ class ProductController extends \yii\web\Controller
             Yii::$app->errorHandler->logException($e);
             Yii::$app->session->setFlash('error', $e->getMessage());
         }
+
+
+    }
+
+    public function actionAddRedir($id, $qty = 1)
+    {
+        try {
+            $product = $this->getProduct($id);
+            $quantity = $this->getQuantity($qty, $product->quantity);
+            if ($item = $this->cart->getItem($product->id)) {
+                $this->cart->plus($item->getId(), $quantity);
+//                return $itemById['price'];
+            } else {
+                $this->cart->add($product, $quantity);
+//                return $itemById['price'];
+            }
+        } catch (\DomainException $e) {
+            Yii::$app->errorHandler->logException($e);
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
             return $this->redirect(['index']);
 
     }

@@ -48,13 +48,13 @@ class Item extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'price' => 'Price',
-            'wt' => 'Wt',
-            'img' => 'Img',
-            'product_title' => 'product_title',
+            'id' => 'Номер',
+            'title' => 'Заголовок',
+            'description' => 'Описание',
+            'price' => 'Цена',
+            'wt' => 'Вес',
+            'img' => 'Изображение',
+            'product_title' => 'Тип товара',
         ];
     }
 

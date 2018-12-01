@@ -4,14 +4,10 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\ContactForm */
 
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\captcha\Captcha;
-
 $this->title = 'Контакты';
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="footer-bottom__wrapper">
+<!--<div class="footer-bottom__wrapper">-->
 
     <main class="page-main footer-bottom__content">
         <div class="page-main__wrapper wrapper">
@@ -72,9 +68,8 @@ $this->title = 'Контакты';
             </div>
         </div>
     </main>
-</div>
+<!--</div>-->
 <script src="../../web/js/vertical-menu.js"></script>
 <script src="../../web/js/drop-down.js"></script>
-<script
-        src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDluwBfvy_M346vmyhvVLD62kK76nnVtss"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDluwBfvy_M346vmyhvVLD62kK76nnVtss"></script>
 <script src="../../web/js/map.js"></script>
