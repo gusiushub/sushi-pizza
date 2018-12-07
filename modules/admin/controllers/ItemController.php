@@ -97,12 +97,15 @@ class ItemController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())){
+        	// if(!empty($model->img)){
             $nameImg = $model->img;
             $filename = $nameImg->extension;
             $path = 'img/' . $filename;
             $model->img = $filename;
             $model->img = UploadedFile::getInstance($model, 'img');
             $model->img->saveAs( $path . $model->img);
+        	// }
+        	// $model->img =$model->img;
             if($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }

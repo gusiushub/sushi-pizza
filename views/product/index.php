@@ -49,7 +49,9 @@ $breadcrumbs = [
                             <footer class="cards-list__item-footer">
                                 <p class="cards-list__item-price">
                                     <span><?= $item['price'] ?> ₽</span>
+                                    <?php  if ($item['wt']!=0){ ?>
                                     <span class="cards-list__item-under"><?= $item['wt'] ?> гр.</span>
+                                    <?php } ?>	
                                 </p>
 <!--                                <a href="--><?//=Url::to(['product/add', 'id' => $item['id']])?><!--">-->
                                 <button id="but" type="button" onclick='$.ajax({

@@ -33,11 +33,11 @@ class Item extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'description', 'price', 'wt', 'product_title'], 'required'],
+            [['title', 'price', 'product_title'], 'required'],
             [['title', 'description','product_title'], 'string'],
             [['price', 'wt'], 'integer'],
 //            [['img'], 'string', 'max' => 64],
-            [['img'], 'file', 'skipOnEmpty' => false],
+            [['img'], 'file', 'skipOnEmpty' => true],
 //            [['img'], 'file', 'extensions' => 'png, jpg','skipOnEmpty' => true]
         ];
     }
