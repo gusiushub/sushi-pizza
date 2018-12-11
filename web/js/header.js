@@ -8,7 +8,7 @@
   var menu = container.querySelector('.page-header__cart-form');
 
   container.addEventListener('click', function (evt) {
-    evt.preventDefault();
+    // evt.preventDefault();
     var isButton = evt.target.closest('.page-header__cart-top-item') || evt.target.closest('.page-header__cart-button');
     if (isButton) {
       button.classList.toggle('page-header__cart-top-item--active');

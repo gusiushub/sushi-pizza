@@ -4487,7 +4487,7 @@ html {
           box-sizing: inherit;
 }
 body {
-  min-width: 480px;
+  min-width: 320px;
   font-family: "MuseoSansCyrl", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -7492,11 +7492,14 @@ body {
 }
 .cards-list__item-img {
   margin-top: 15px;
+  width: 206px;
+  height: 166px;
   padding: 0 20px;
 }
 @media (max-width: 1024px) {
   .cards-list__item-img {
     width: 146px;
+    height: 106px;
   }
 }
 .cards-list__item-body {

@@ -49,21 +49,32 @@ class ProductController extends \yii\web\Controller
             'Сыр'=>40,
         ];
 
+
+
         if (!isset($_GET['item'])){
             return $this->redirect(['/site/menu']);
         }
 
         $items = Item::find()->where('product_title=:item',[':item' => $_GET['item']])->all();
 
-        if (isset($_POST['wok'])){
-            if (!empty($eat[$_POST["add-filling"]])) {
-
-            }
-            if (!empty($eat[$_POST["topping"]])) {
-
-            }
-
+        if (isset($_POST['topping']) && isset($_POST['add-filling'])){
+            $menu = [
+                'Морепродукты'=>100,
+                'Говядина' => 90,
+                'Свинина' => 70,
+                'Курица' => 60,
+                'Лосось' => 110,
+                'Сыр' => 40,
+                'Бекон' => 60,
+                'Шампиньоны' => 40,
+                'Яйцо' =>20
+            ];
+            $wok=$menu[$_POST['add-filling']]+$menu[$_POST['topping']]+169;
+            $wokItem = Item::find()->where('price=:price',[':price' => $wok])->all();
+//            var_dump($wokItem[0]['id']);
+            $this->actionAdd($wokItem[0]['id']);
         }
+
 
         if ($_GET['item']=='wok'){
             return $this->render('wok', [
@@ -109,12 +120,31 @@ class ProductController extends \yii\web\Controller
         try {
             $product = $this->getProduct($id);
             $quantity = $this->getQuantity($qty, $product->quantity);
+            if (isset($_GET['item'])){
+                if ($_GET['item']=='wok'){
+                    $menu = [
+                        'Морепродукты'=>100,
+                        'Говядина' => 90,
+                        'Свинина' => 70,
+                        'Курица' => 60,
+                        'Лосось' => 110,
+                        'Сыр' => 40,
+                        'Бекон' => 60,
+                        'Шампиньоны' => 40,
+                        'Яйцо' =>20
+                    ];
+//                    $_SESSION['wok']=$_SESSION['wok']+$menu[$_POST['add-filling']]+$menu[$_POST['topping']];
+//                    var_dump($_SESSION['wok']);
+                }
+            }
             if ($item = $this->cart->getItem($product->id)) {
                 $this->cart->plus($item->getId(), $quantity);
 //                return $itemById['price'];
+//                var_dump($item->getPrice()+100);
             } else {
                 $this->cart->add($product, $quantity);
 //                return $itemById['price'];
+//                var_dump($item->getPrice()+100);
             }
         } catch (\DomainException $e) {
             Yii::$app->errorHandler->logException($e);

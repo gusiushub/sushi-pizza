@@ -1,5 +1,18 @@
 <?php
 
+$menu = [
+    'Морепродукты'=>100,
+    'Говядина' => 90,
+    'Свинина' => 70,
+    'Курица' => 60,
+    'Лосось' => 110,
+    'Сыр' => 40,
+    'Бекон' => 60,
+    'Шампиньоны' => 40,
+    'Яйцо' =>20
+];
+
+
 
 ?>
 
@@ -277,7 +290,16 @@
                 <div class="noodles__cart-total-wrapper">
                     <div class="noodles__cart-total-text">
                         <span>Итого к оплате:</span>
-                        <strong class="noodles__cart-total-value">289</strong>
+                        <strong class="noodles__cart-total-value">
+                        <?php
+                        if (isset($_POST['topping'])){
+                            echo $menu[$_POST['add-filling']]+$menu[$_POST['topping']]+169;
+
+                        }else{
+                        ?>
+                        289
+                        <?php } ?>
+                        </strong>
                         <strong class="noodles__cart-total-sign"> руб.</strong>
                     </div>
                     <button class="noodles__cart-total-button button" name="wok" type="submit">В корзину</button>

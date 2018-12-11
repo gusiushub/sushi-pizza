@@ -117,15 +117,24 @@ AppAsset::register($this);
                     <ol class="page-header__cart-list">
                         <?php
 
-//                        $cartItems = $_SESSION['cart'];
-
                         if(!empty($_SESSION['cart'])){ ?>
                             <?php foreach($_SESSION['cart'] as $item){?>
                         <li class="page-header__cart-item goods-container">
                             <div class="page-header__cart-title-wrapper">
                                 <a href="<?=Url::to(['product', 'id' => $item->getId()])?>" class="page-header__cart-title"><?php echo $item->getProduct()->title ?></a>
                                 <a href="<?=Url::to(['product', 'id' => $item->getId()])?>">
-                                    <button class="button goods-delete" type="submit" title="Удалить">
+                                    <button onclick='$.ajax({
+                                            url: "/product/remove?item=<?= $_GET['item'] ?>&id=<?= $item->getId() ?>",
+                                            data: $("#min").serialize(),
+                                            success:  function(response){
+                                            console.log(response);
+                                            // put on console what server sent back...
+                                            },
+                                            error: function(response) {
+                                            //обработка ошибок при отправке
+                                            console.log(response);
+                                            }
+                                            });' class="button goods-delete" type="submit" title="Удалить">
                                         <i class="fas fa-times"></i>
                                     </button>
                                 </a>
@@ -176,9 +185,7 @@ AppAsset::register($this);
                                 </div>
                             </div>
                         </li>
-
                             <?php } ?>
-
                     </ol>
                     <div class="page-header__cart-total-price-wrapper">
                         <div class="page-header__cart-total-price-text">
@@ -253,7 +260,8 @@ AppAsset::register($this);
         </div>
     </div>
 </header>
-        <?= $content ?>
+
+<?= $content ?>
 
 <footer class="page-footer">
     <div class="page-footer__wrapper wrapper">
